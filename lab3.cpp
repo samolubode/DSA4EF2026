@@ -50,15 +50,17 @@ BINARY SEARCH
 //   do
 //   {
 //     mid = (first + last) / 2;
+
 //     if (s[mid] < key)
 //     { // search top half
-//       first = mid + 1;
+//       first = mid + 1; // 
 //     }
 //     else
 //     { // search bottom half
-//       last = mid - 1;
+//       last = mid - 1; // 
 //     }
 //   } while ((first <= last) && (s[mid] != key));
+
 //   if (s[mid] == key)
 //     return (mid);
 //   else
@@ -95,27 +97,27 @@ RECURSION
 
 /* Recursive functions - a function calling itself*/
 /* Base Condition to terminate recursion*/
-// type functionName(parameters){
+// type recursive_func(parameters){
 //   // 1. perform operation 1
 //   // 2. perform operation 2
 //   if (base condition is met){ // there must be a base condition that terminates the recursion
 //     return something;
 //   }
 //   else{
-//     return functionName(modified parameters);
+//     return recursive_func(modified parameters);
 //   }
 // }
 
 // Concerete Recursive Function Example
 // EXAMPLE 1
-// void func1(int n)
-// {
-//   if (n > 0) // in some cases, you can simply use `return` to terminate the function
-//   {
-//     cout << n << " ";
-//     func1(n - 1);
-//   }
-// }
+void func1(int n)
+{
+  if (n > 0) // in some cases, you can simply use `return` to terminate the function
+  {
+    cout << n << " ";
+    func1(n - 1);
+  }
+}
 
 // // EXAMPLE 2
 // void func2(int n)
@@ -127,16 +129,16 @@ RECURSION
 //   }
 // }
 
-// int main()
-// {
-//   int n = 5;
-//   // func1(n);
-//   func2(n);
+int main()
+{
+  int n = 5;
+  func1(n);
+  // func2(n);
 
-//   // RECURSION IS ESSENTIALLY A TWO-PHASE PROCESS OF CALLING AND RETURNING A FUNCTION OF ITSELF.
-//   // THE CALLING PHASE IS WHEN THE FUNCTION KEEPS CALLING ITSELF UNTIL IT REACHES THE BASE CONDITION.
-//   // THE RETURNING PHASE IS WHEN THE FUNCTION STARTS RETURNING BACK TO THE PREVIOUS CALLS, EXECUTING ANY CODE THAT COMES AFTER THE RECURSIVE CALL.
-// }
+  // RECURSION IS ESSENTIALLY A TWO-PHASE PROCESS OF CALLING AND RETURNING A FUNCTION OF ITSELF.
+  // THE CALLING PHASE IS WHEN THE FUNCTION KEEPS CALLING ITSELF UNTIL IT REACHES THE BASE CONDITION.
+  // THE RETURNING PHASE IS WHEN THE FUNCTION STARTS RETURNING BACK TO THE PREVIOUS CALLS, EXECUTING ANY CODE THAT COMES AFTER THE RECURSIVE CALL.
+}
 
 // Recursive binary search
 
