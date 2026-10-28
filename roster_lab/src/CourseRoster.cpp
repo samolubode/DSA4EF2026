@@ -39,9 +39,23 @@ RosterEntry *previous(EntryPtr w, EntryPtr *list)
 
 void insert_student(const Student &student, EntryPtr *list)
 {
-  (void)student;
-  (void)list;
-  // TODO: Append a newly allocated node.
+  EntryPtr newRoster = new RosterEntry{student, nullptr}; // for Keza
+  // is the list empty
+  if(list == nullptr || *list == nullptr){
+    *list = newRoster;
+    return;
+  }
+
+  // if there are already student roster entry
+  // trace variable to keep track of current element (Node)
+  EntryPtr trace = *list;
+
+  // 
+  while(trace->next != nullptr){
+    trace = trace->next;
+  }
+
+  trace->next = newRoster;
 }
 
 void delete_student(EntryPtr w, EntryPtr *list)
@@ -69,6 +83,14 @@ RosterEntry *empty(EntryPtr *list)
 
 void printList(EntryPtr *list)
 {
-  (void)list;
-  // TODO: Print the roster, or [EmptyRoster] if empty.
+  EntryPtr trace = *list;
+
+  //
+  while (trace->next != nullptr)
+  {
+    std::cout << trace->record.name << std::endl;
+    trace = trace->next;
+  }
+
+  std::cout << trace->record.name << std::endl;
 }
